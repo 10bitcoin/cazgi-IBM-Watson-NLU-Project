@@ -22,7 +22,7 @@ function getNLUInstance() {
     /*Type the code to create the NLU instance and return it.
     You can refer to the image in the instructions document
     to do the same.*/
-}
+
 const NaturalLanguageUnderstandingV1 = require('ibm-watson/natural-language-understanding/v1');
 const { IamAuthenticator } = require('ibm-watson/auth');
 
@@ -34,7 +34,7 @@ const naturalLanguageUnderstanding = new NaturalLanguageUnderstandingV1({
     serviceUrl: api_url
 });
 return naturalLanguageUnderstanding;
-
+}
 //The default endpoint for the webserver
 app.get("/",(req,res)=>{
     res.render('index.html');
@@ -148,5 +148,5 @@ app.get("/text/sentiment", (req,res) => {
 
 let server = app.listen(8080, () => {
     console.log('Listening', server.address().port)
-})
+});
 
